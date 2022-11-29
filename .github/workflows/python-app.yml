@@ -1,6 +1,8 @@
 name: yes24_crawler
 
 on:
+  issues:
+    types: [opened, edited]
   schedule:
     - cron: '* * * * *'
 
