@@ -7,3 +7,4 @@
   - Master로 Push할 때 실행
 - (3) Job에서 생성한 파일을 공유해서 사용하는 Github Action
   - [upload-artifact](https://github.com/actions/upload-artifact)와 [download-artifact](https://github.com/actions/download-artifact) 사용 예제
+  - cron: '0 0 * * *'
