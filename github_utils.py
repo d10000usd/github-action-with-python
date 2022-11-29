@@ -20,6 +20,7 @@ def upload_github_issue(repo, title, body):
     :param body: issue body
     :return: None
     """
+
     repo.create_issue(title=title, body=body)
 
 
