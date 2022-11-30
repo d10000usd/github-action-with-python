@@ -1,28 +1,28 @@
 import os
 from datetime import datetime
 from pytz import timezone
-from crawling_yes24 import parsing_beautifulsoup, extract_book_data
-from github_utils import get_github_repo, upload_github_issue
+from github import Github
 
+
+def upissue(issue_title):
+    upload_contents= f"{issue_title}Upload Github Issue Success!"
+    return upload_contents
+def get_github_repo(access_token, repository_name):
+    g = Github(access_token)
+    return g.get_user().get_repo(repository_name)
+def upload_github_issue(repo, title, body):
+    repo.create_issue(title=title, body=body)
 
 if __name__ == "__main__":
-
-
-    access_token = os.environ['MY_GITHUB_TOKEN']
+    # access_token = os.environ['MY_GITHUB_TOKEN']
+    access_token = "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"
     repository_name = "github-action-with-python"
-
     seoul_timezone = timezone('Asia/Seoul')
     today = datetime.now(seoul_timezone)
     today_date = today.strftime("%Y년 %m월 %d일")
-
-    yes24_it_new_product_url = "http://www.yes24.com/24/Category/NewProductList/001001003?sumGb=01"
-
-    soup = parsing_beautifulsoup(yes24_it_new_product_url)
-
-    issue_title = f"YES24 IT 신간 도서 알림({today_date})"
-    upload_contents = extract_book_data(soup)
+    issue_title = f"NEW ISUE !! ({today_date})"
+    upload_contents = upissue(issue_title)
     repo = get_github_repo(access_token, repository_name)
     upload_github_issue(repo, issue_title, upload_contents)
     print("Upload Github Issue Success!")
 
-# Path: app/github-action-with-python/crawling_yes24.py
