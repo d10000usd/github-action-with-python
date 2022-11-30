@@ -21,3 +21,4 @@ def upload_github_issue(repo, title, body):
     """
     repo.create_issue(title=title, body=body)
  #mkdocs gh-deploy --force
+ #mkdocs gh-deploy --force
