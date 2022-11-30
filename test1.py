@@ -14,8 +14,8 @@ def upload_github_issue(repo, title, body):
     repo.create_issue(title=title, body=body)
 
 if __name__ == "__main__":
-    # access_token = os.environ['MY_GITHUB_TOKEN']
-    access_token = "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"
+    access_token = os.environ['MY_GITHUB_TOKEN']
+
     repository_name = "github-action-with-python"
     seoul_timezone = timezone('Asia/Seoul')
     today = datetime.now(seoul_timezone)
