@@ -25,4 +25,4 @@ if __name__ == "__main__":
     upload_github_issue(repo, issue_title, upload_contents)
     print("Upload Github Issue Success!")
 
-
+# Path: app/github-action-with-python/crawling_yes24.py
