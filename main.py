@@ -15,7 +15,11 @@ def upload_github_issue(repo, title, body):
 
 if __name__ == "__main__":
     access_token = os.environ['MY_GITHUB_TOKEN']
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> c83ca8d9c8e79fb2ce0aa62f73dd1643635debf7
     repository_name = "github-action-with-python"
     seoul_timezone = timezone('Asia/Seoul')
     today = datetime.now(seoul_timezone)
